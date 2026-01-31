@@ -79,25 +79,6 @@ Most modern voice applications depend on online speech-to-text services and larg
 
 ---
 
-## Project Structure
-
-OfflineVocalCalculator/
-│── app.py
-│── record_audio.py
-│── README.md
-│
-├── static/
-│   ├── audio/
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── script.js
-│
-└── templates/
-    └── index.html
-
----
-
 ## Running the Project
 
 Install the required dependencies:
