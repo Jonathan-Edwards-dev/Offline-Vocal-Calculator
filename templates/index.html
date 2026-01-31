@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="calculator">
+        <div class="mode-slider">
+            <!-- Dark/Light Mode Slider -->
+            <input type="range" id="themeSlider" min="0" max="100" value="50" />
+        </div>
+        <div class="display">
+            <input type="text" id="result" readonly>
+        </div>
+<br>
+        <div class="buttons">
+            <button class="button" onclick="clearResult()">AC</button>
+            <button class="button" onclick="undo()">↩</button>
+            <button class="button" onclick="appendToResult('%')">%</button>
+            <button class="button" onclick="appendToResult('/')">/</button>
+
+            <button class="button" onclick="appendToResult('7')">7</button>
+            <button class="button" onclick="appendToResult('8')">8</button>
+            <button class="button" onclick="appendToResult('9')">9</button>
+            <button class="button" onclick="appendToResult('*')">×</button>
+
+            <button class="button" onclick="appendToResult('4')">4</button>
+            <button class="button" onclick="appendToResult('5')">5</button>
+            <button class="button" onclick="appendToResult('6')">6</button>
+            <button class="button" onclick="appendToResult('-')">-</button>
+
+            <button class="button" onclick="appendToResult('1')">1</button>
+            <button class="button" onclick="appendToResult('2')">2</button>
+            <button class="button" onclick="appendToResult('3')">3</button>
+            <button class="button" onclick="appendToResult('+')">+</button>
+
+            <button class="button" onclick="appendToResult('.')">.</button>
+            <button class="button" onclick="appendToResult('0')">0</button>
+            <button class="equal-button" onclick="calculateResult()">=</button>
+            <button class="stop" onclick="stopLoop()">Stop</button>
+        </div>
+
+        <button id="activateVoiceButton">Activate Voice 🎙️</button>
+    </div>
+
+    <!-- Define audio elements for results -->
+    <audio id="audio-0" src="{{ url_for('static', filename='audio/0.wav') }}"></audio>
+    <audio id="audio-1" src="{{ url_for('static', filename='audio/1.wav') }}"></audio>
+    <audio id="audio-2" src="{{ url_for('static', filename='audio/2.wav') }}"></audio>
+    <audio id="audio-3" src="{{ url_for('static', filename='audio/3.wav') }}"></audio>
+    <audio id="audio-4" src="{{ url_for('static', filename='audio/4.wav') }}"></audio>
+    <audio id="audio-5" src="{{ url_for('static', filename='audio/5.wav') }}"></audio>
+    <audio id="audio-6" src="{{ url_for('static', filename='audio/6.wav') }}"></audio>
+    <audio id="audio-7" src="{{ url_for('static', filename='audio/7.wav') }}"></audio>
+    <audio id="audio-8" src="{{ url_for('static', filename='audio/8.wav') }}"></audio>
+    <audio id="audio-9" src="{{ url_for('static', filename='audio/9.wav') }}"></audio>
+    <audio id="audio-plus" src="{{ url_for('static', filename='audio/plus.wav') }}"></audio>
+    <audio id="audio-minus" src="{{ url_for('static', filename='audio/minus.wav') }}"></audio>
+    <audio id="audio-multiply" src="{{ url_for('static', filename='audio/multiply.wav') }}"></audio>
+    <audio id="audio-divide" src="{{ url_for('static', filename='audio/divide.wav') }}"></audio>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
